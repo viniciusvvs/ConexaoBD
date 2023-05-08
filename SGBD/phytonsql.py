@@ -1,14 +1,9 @@
-import pyodbc
+import mysql.connector
 
-dados_conexao = (
-
-"Driver={SQL Server};"
-"Server=DESKTOP-8G5VGUV;"
-"Database=PhytonSQL;"
-
-) 
-
-conexao = pyodbc.connect(dados_conexao)
-print("conexão bem Sucedida")
-
-cursor = conexao.cursor()
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="thunder123",
+  database="thunder"
+)
+mydb.close()
